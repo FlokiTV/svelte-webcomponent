@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>esbuild-svelte Example</title>
+  </head>
+
+  <body>
+    <script type="module">
+      import Test from "./index.js";
+      import "./style.js";
+      new Test({
+        target: appTarget,
+        props: {
+          id: 1,
+        },
+      });
+    </script>
+    <div id="appTarget"></div>
+  </body>
+</html>

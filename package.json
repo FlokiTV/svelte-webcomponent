@@ -1,0 +1,20 @@
+{
+  "name": "my-svelte-app",
+  "version": "1.0.0",
+  "description": "A largely straightforward approach for crafting Svelte Web Components",
+  "main": "bin/buildscript.js",
+  "scripts": {
+    "build": "node bin/buildscript.js",
+    "build-css": "node bin/build-css.js",
+    "dev": "node bin/watch.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.10",
+    "esbuild-svelte": "^0.7.3",
+    "svelte": "^4.0.0",
+    "tailwindcss": "^3.3.3"
+  },
+  "keywords": [],
+  "author": "FlokiTV",
+  "license": "ISC"
+}
