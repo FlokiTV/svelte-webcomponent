@@ -4,6 +4,9 @@ A largely straightforward approach for crafting Svelte Web Components
 
 ## Introduction
 
+```
+npx degit FlokiTV/svelte-webcomponent my-svelte-app 
+```
 
 ## Development
 to watch svelte and tailwind
