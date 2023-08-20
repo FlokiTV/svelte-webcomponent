@@ -43,4 +43,7 @@ esbuild
         fs.copyFile(_DIST+"index.js", "./dist/index.js", (err) => {
             if (err) throw err;
         });
+        fs.copyFile("./config.js", "./dist/config.js", (err) => {
+            if (err) throw err;
+        });
     })

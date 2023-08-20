@@ -4,9 +4,12 @@
 
   onMount(() => {
     console.log("the second component has mounted");
-    test.value = "This is from the second component (components can be imported and they are bundled, yay)";
+    test.value =
+      "This is from the second component (components can be imported and they are bundled, yay)";
   });
 </script>
+
+<input type="text" bind:this={test} class="teste"/>
 
 <style>
   input {
@@ -15,5 +18,3 @@
     min-width: 16em;
   }
 </style>
-
-<input type="text" bind:this={test} />

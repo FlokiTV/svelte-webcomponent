@@ -8,13 +8,13 @@
 
   <body>
     <script type="module">
-      import Test from "./index.js";
+      import Componente from "./index.js";
+      import Config from "./config.js";
       import "./style.js";
-      new Test({
+
+      new Componente({
         target: appTarget,
-        props: {
-          id: 1,
-        },
+        props: Config.props || {},
       });
     </script>
     <div id="appTarget"></div>

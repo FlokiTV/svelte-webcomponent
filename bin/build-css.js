@@ -10,7 +10,6 @@ exec(`npx tailwindcss -i ${__dirname}/dist/index.css -o ${__dirname}/dist/style.
     // auto append style script
     const css = "`" + fs.readFileSync(__dirname + "/dist/style.css", { encoding: "utf-8" }) + "`"
     const content = `let styleSheet = document.createElement("style");styleSheet.innerText = ${css};document.head.appendChild(styleSheet);`
-
     fs.writeFile(__dirname + '/dist/style.js', content, (err) => {
         if (err) {
             console.error('Ocorreu um erro ao criar o arquivo:', err);

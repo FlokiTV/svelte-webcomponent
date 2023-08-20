@@ -1,2 +1,2 @@
-import Test from "../src/index.svelte";
-export default Test;
+import Component from "../src/index.svelte";
+export default Component;
