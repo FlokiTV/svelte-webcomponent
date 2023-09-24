@@ -3,41 +3,19 @@ const esbuild = require("esbuild");
 const sveltePlugin = require("esbuild-svelte");
 const { exec } = require("child_process");
 
-const _DIST = __dirname + "/dist/";
-// if (fs.existsSync(_DIST)) fs.rmdirSync(_DIST, { recursive: true, force: true })
-
-//make sure the directoy exists before stuff gets put into it
-if (!fs.existsSync(_DIST)) {
-  fs.mkdirSync(_DIST);
-}
-const DIST = "./dist/";
-//make sure the directoy exists before stuff gets put into it
-// if (fs.existsSync(DIST)) fs.rmdirSync(DIST, { recursive: true, force: true })
+const DIST = process.cwd() + "/dist";
+if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true, force: true });
 if (!fs.existsSync(DIST)) {
   fs.mkdirSync(DIST);
+  fs.copyFileSync(__dirname + "/index.html", DIST + "/index.html");
 }
-let isCopy = false;
 
-const watcher = fs.watch(_DIST, (eventType, filename) => {
-  if (!isCopy) {
-    isCopy = true;
-    console.log("copy index.js");
-    fs.copyFile(_DIST + "index.js", "./dist/index.js", (err) => {
-      // if (err) throw err;
-      isCopy = false;
-      console.log("copy index.js done");
-    });
-  } else {
-    console.log("index.js busy");
-  }
-  fs.copyFile(_DIST + "../index.html", "./dist/index.html", (err) => {
-    // if (err) throw err;
-  });
-  fs.copyFile("./config.js", "./dist/config.js", (err) => {
-    // if (err) throw err;
-  });
-});
-
+const copyJsConfig = () => {
+  console.log("[init] copy config.js file");
+  fs.copyFileSync(DIST + "/../config.js", DIST + "/config.js");
+};
+fs.watchFile(DIST + "/../config.js", copyJsConfig);
+copyJsConfig();
 //build the application
 // https://esbuild.github.io/api/#watch
 const watch = () => {
@@ -46,13 +24,13 @@ const watch = () => {
       entryPoints: [__dirname + "/index.js"],
       mainFields: ["svelte", "browser", "module", "main"],
       conditions: ["svelte", "browser"],
-      outdir: process.cwd()+"/dist/",
+      outdir: process.cwd() + "/dist/",
       format: "esm",
       logLevel: "info",
-      minify: true, //so the resulting code is easier to understand
       bundle: true,
       splitting: true,
-      sourcemap: "inline",
+      minify: true,
+      sourcemap: false, //"inline",
       plugins: [sveltePlugin()],
     })
     .then(async (ctx) => {

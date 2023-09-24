@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
+.btn{
   @apply px-2 text-white rounded bg-zinc-500 hover:bg-zinc-600 active:bg-zinc-400;
 }

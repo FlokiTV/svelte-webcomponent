@@ -4,11 +4,9 @@
   "description": "A largely straightforward approach for crafting Svelte Web Components",
   "main": "bin/build-svelte.js",
   "scripts": {
-    "dev": "node bin/watch.js",
     "serve": "node bin/server.js",
-    "build": "node bin/build-svelte.js",
-    "build-css": "node bin/build-css.js",
-    "dev-css": "npx tailwindcss -i ./bin/dist/index.css -o ./dist/style.css --minify --watch"
+    "svelte": "node bin/svelte.js",
+    "css": "npx tailwindcss -i ./dist/index.css -o ./dist/style.css --minify --watch"
   },
   "devDependencies": {
     "esbuild": "^0.18.10",
