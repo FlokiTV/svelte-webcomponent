@@ -46,7 +46,7 @@ const watch = () => {
       entryPoints: [__dirname + "/index.js"],
       mainFields: ["svelte", "browser", "module", "main"],
       conditions: ["svelte", "browser"],
-      outdir: _DIST,
+      outdir: process.cwd()+"/dist/",
       format: "esm",
       logLevel: "info",
       minify: true, //so the resulting code is easier to understand

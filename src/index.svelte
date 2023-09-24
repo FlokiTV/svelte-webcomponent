@@ -14,13 +14,13 @@
 </script>
 
 <div class="test">
-  {count}
+  Count: {count}
   <h1 class="teste">teste: {id}</h1>
   <input type="text" name="testingInput" bind:this={inputBinding} />
 </div>
 
 <div class="secondStyle">
-  <button on:click={_count}>COUNT</button>
-  <button on:click={change}>Click this buttons!</button>
+  <button on:click={_count} class="btn">COUNT</button>
+  <button on:click={change} class="btn">Click this buttons!</button>
   <Second />
 </div>
