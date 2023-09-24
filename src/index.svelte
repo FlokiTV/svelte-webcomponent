@@ -13,13 +13,18 @@
   }
 </script>
 
-<div class="test">
+<div class="p-2 test">
   Count: {count}
   <h1 class="teste">teste: {id}</h1>
-  <input type="text" name="testingInput" bind:this={inputBinding} />
+  <input
+    class="border"
+    type="text"
+    name="testingInput"
+    bind:this={inputBinding}
+  />
 </div>
 
-<div class="secondStyle">
+<div class="p-2 secondStyle">
   <button on:click={_count} class="btn">COUNT</button>
   <button on:click={change} class="btn">Click this buttons!</button>
   <Second />
