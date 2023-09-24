@@ -11,9 +11,14 @@ npm i
 ```
 
 ## Development
-to watch svelte and tailwind
+to watch svelte
 ```
-npm run dev
+npm run svelte
+```
+
+to watch tailwind
+```
+npm run css
 ```
 
 to serve `/dist` folder
@@ -21,12 +26,9 @@ to serve `/dist` folder
 npm run serve
 ```
 
-build only svelte
+to build css to js
 ```
-npm run build
+npm run css2js
 ```
 
-build only tailwind
-```
-npm run build-css
-```
+todo: build command
