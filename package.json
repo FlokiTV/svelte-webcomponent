@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "node bin/server.js",
     "svelte": "node bin/svelte.js",
+    "css2js": "node bin/make-css.js",
     "css": "npx tailwindcss -i ./dist/index.css -o ./dist/style.css --minify --watch"
   },
   "devDependencies": {
